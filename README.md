@@ -10,18 +10,19 @@ This is wholely based on the following code:
 
 I've basically taken the code and wrapped it for parsing CoNLL-U format files. 
 
-# Usage
+### My additions to the tagger
 
-Like UDpipe:
+I tryed to add some rules to the tagger and improve it's result for French language.
+With start setting it gaves a result like this on the test data:
 
-Train:
+![Image of first try](https://raw.githubusercontent.com/kssamoylenko/conllu-perceptron-tagger/master/try1_estimation.png)
 
-```
-cat kk-ud-train.conllu | python3 tagger.py -t model.dat
-```
+Then, with adding some rools it gets better like this:
 
-Predict:
+![One rule added](https://raw.githubusercontent.com/kssamoylenko/conllu-perceptron-tagger/master/try2_estimation.png)
+![Some more rules added](https://raw.githubusercontent.com/kssamoylenko/conllu-perceptron-tagger/master/try5_estimation.png)
 
-```
-cat kk-ud-test.conllu | python3 tagger.py model.dat > output
-```
+The last one seemed like not bad. But when I tried the updated tagger on the test data, it turned into this:
+![Final results](https://raw.githubusercontent.com/kssamoylenko/conllu-perceptron-tagger/master/final.png)
+
+Not as great as I hoped, but anyway, it's better then it was at the beginnig, even just a little bit :)
