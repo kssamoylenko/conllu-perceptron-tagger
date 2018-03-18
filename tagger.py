@@ -176,6 +176,12 @@ class PerceptronTagger():
 		add('i+1 word', context[i+1])
 		add('i+1 suffix', context[i+1][-3:])
 		add('i+2 word', context[i+2])
+        #new features
+		add('i+3 word', context[i-3])
+		add('i-2 suffix', context[i+2][-3:])  
+		add('i suffix', word[-5:])
+		add('i suffix', word[-4:])
+		add('i-2 tag+i word', prev, context[i])
 		#print(word, '|||', features)
 		return features
 
